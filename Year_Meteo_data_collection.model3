@@ -1,0 +1,195 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option name="children" type="Map">
+    <Option name="native:filedownloader_1" type="Map">
+      <Option name="active" type="bool" value="true"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" type="QString" value="native:filedownloader"/>
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="320"/>
+        <Option name="component_pos_y" type="double" value="115"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="Download file (SASSCAL Data)"/>
+      <Option name="component_height" type="double" value="30"/>
+      <Option name="component_pos_x" type="double" value="505.15037000348315"/>
+      <Option name="component_pos_y" type="double" value="359.0560806508386"/>
+      <Option name="component_width" type="double" value="200"/>
+      <Option name="dependencies"/>
+      <Option name="id" type="QString" value="native:filedownloader_1"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+      <Option name="params" type="Map">
+        <Option name="DATA" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="METHOD" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="int" value="0"/>
+          </Option>
+        </Option>
+        <Option name="OUTPUT" type="List">
+          <Option type="Map">
+            <Option name="expression" type="QString" value="@project_folder|| '/'||'MONTHLY'||&#xd;&#xa;&#xd;&#xa;Case when  @choose_aws is 0&#xd;&#xa;then  to_string('Campus_ISPT' )&#xd;&#xa;when  @choose_aws is 1&#xd;&#xa;then to_string('Mukongo')&#xd;&#xa;when  @choose_aws is 2&#xd;&#xa;then to_string('Onjiva')&#xd;&#xa;end &#xd;&#xa;&#xd;&#xa;||'_'||to_string( @year )||'.csv'"/>
+            <Option name="source" type="int" value="3"/>
+          </Option>
+        </Option>
+        <Option name="URL" type="List">
+          <Option type="Map">
+            <Option name="expression" type="QString" value="to_string('https://sasscalweathernet.org/w_download_csv.php?loggerid_crit='+&#xd;&#xa;&#xd;&#xa;Case when  @choose_aws is 0&#xd;&#xa;then  to_string(@Campus_ISPT )&#xd;&#xa;when  @choose_aws is 1&#xd;&#xa;then to_string(@Mukongo)&#xd;&#xa;when  @choose_aws is 2&#xd;&#xa;then to_string(@Onjiva)&#xd;&#xa;end &#xd;&#xa;&#xd;&#xa;+'&amp;date_crit='&#xd;&#xa;+to_string( @year )&#xd;&#xa;+'&amp;stype=3')"/>
+            <Option name="source" type="int" value="3"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option name="designerParameterValues"/>
+  <Option name="groupBoxes"/>
+  <Option name="help" type="Map">
+    <Option name="ALG_CREATOR" type="QString" value="Evanilton Edgar Serrão Pires. Developed for the WIRE project, part of SASSCAL 2.0 portfolio. Project partners: Achim Schulte, Christian Reinhardt-imjela, Monique Fahrenberg (FUB), Robert Juepner (TUK), Valentine Katte (UNAM) &amp; Evanilton Pires (ISPT)."/>
+    <Option name="ALG_DESC" type="QString" value="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;>&#xa;&lt;html>&lt;head>&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; />&lt;style type=&quot;text/css&quot;>&#xa;p, li { white-space: pre-wrap; }&#xa;&lt;/style>&lt;/head>&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:9.5pt; font-weight:400; font-style:normal;&quot;>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;>SASSCAL Weathernet&lt;/span>&lt;/p>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;>Year_Meteo_data_collection&lt;/span>&lt;/p>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>This model allows the quick acquisition of CSV files containing meteorological observations from Automatic Weather Stations availbale on the SASSCAL Weathernet platform.&lt;/p>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>It downloads and writes the file in the machine where the model is being run, storing at the QGIS project folder directory under the name &amp;quot;Monthly[AWS name]_[Year].csv&amp;quot;&lt;/p>&lt;/body>&lt;/html>"/>
+    <Option name="ALG_HELP_CREATOR" type="QString" value="pires.evanilton@gmail.com"/>
+    <Option name="ALG_VERSION" type="QString" value="V0"/>
+    <Option name="EXAMPLES" type="QString" value="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;>&#xa;&lt;html>&lt;head>&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; />&lt;style type=&quot;text/css&quot;>&#xa;p, li { white-space: pre-wrap; }&#xa;&lt;/style>&lt;/head>&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:9.5pt; font-weight:400; font-style:normal;&quot;>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>MonthlyCampus_ISPT_2014.csv&lt;/p>&lt;/body>&lt;/html>"/>
+    <Option name="HELP_URL" type="QString" value="To use the model, import the model (model file) to a QGIS project and run.&#xa;"/>
+    <Option name="SHORT_DESCRIPTION" type="QString" value="A model to fetch yearly datasets from a single AWS of the SASSCAL Weathernet platform"/>
+    <Option name="aws_id_parameter" type="invalid"/>
+    <Option name="choose_aws" type="QString" value="Indicate the available Autoamtic Weather Station"/>
+    <Option name="year" type="QString" value="Choose the year of interest"/>
+  </Option>
+  <Option name="internal_version" type="QString" value="Version2"/>
+  <Option name="modelVariables" type="Map">
+    <Option name="Campus_ISPT" type="QString" value="857345"/>
+    <Option name="Mukongo" type="QString" value="857341"/>
+    <Option name="Onjiva" type="QString" value="46943"/>
+  </Option>
+  <Option name="model_group" type="QString" value="SASSCAL Weathernet"/>
+  <Option name="model_name" type="QString" value="Year_Meteo_data_collection"/>
+  <Option name="outputGroup" type="QString" value=""/>
+  <Option name="outputOrder"/>
+  <Option name="parameterDefinitions" type="Map">
+    <Option name="aws_id_parameter" type="Map">
+      <Option name="default" type="QString" value="Case when  @choose_aws is 0&#xd;&#xa;then  to_string(@Campus_ISPT )&#xd;&#xa;when  @choose_aws is 1&#xd;&#xa;then to_string(@Mukongo)&#xd;&#xa;when  @choose_aws is 2&#xd;&#xa;then to_string(@Onjiva)&#xd;&#xa;end "/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="AWS_ID_parameter"/>
+      <Option name="expression_type" type="int" value="0"/>
+      <Option name="flags" type="int" value="10"/>
+      <Option name="help" type="QString" value=""/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="aws_id_parameter"/>
+      <Option name="parameter_type" type="QString" value="expression"/>
+      <Option name="parent_layer" type="QString" value=""/>
+    </Option>
+    <Option name="choose_aws" type="Map">
+      <Option name="allow_multiple" type="bool" value="false"/>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Choose AWS"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value="Indicate the available Autoamtic Weather Station"/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="choose_aws"/>
+      <Option name="options" type="StringList">
+        <Option type="QString" value="Campus ISPT"/>
+        <Option type="QString" value="Mukongo"/>
+        <Option type="QString" value="Onjiva"/>
+      </Option>
+      <Option name="parameter_type" type="QString" value="enum"/>
+      <Option name="uses_static_strings" type="bool" value="false"/>
+    </Option>
+    <Option name="year" type="Map">
+      <Option name="data_type" type="int" value="0"/>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Year"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value="Choose the year of interest"/>
+      <Option name="max" type="double" value="1.7976931348623157e+308"/>
+      <Option name="metadata"/>
+      <Option name="min" type="double" value="2014"/>
+      <Option name="name" type="QString" value="year"/>
+      <Option name="parameter_type" type="QString" value="number"/>
+    </Option>
+  </Option>
+  <Option name="parameterOrder" type="StringList">
+    <Option type="QString" value="choose_aws"/>
+    <Option type="QString" value="year"/>
+    <Option type="QString" value="aws_id_parameter"/>
+  </Option>
+  <Option name="parameters" type="Map">
+    <Option name="aws_id_parameter" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value="Chooses the corresponding variable to fill the URL"/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="841.323131234393"/>
+        <Option name="component_pos_y" type="double" value="77.95727201980012"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="aws_id_parameter"/>
+      <Option name="component_height" type="double" value="58.701109303144165"/>
+      <Option name="component_pos_x" type="double" value="714.6647499114488"/>
+      <Option name="component_pos_y" type="double" value="280.82241174388116"/>
+      <Option name="component_width" type="double" value="200"/>
+      <Option name="name" type="QString" value="aws_id_parameter"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="choose_aws" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value="Enumerator with the names of stations. Connect to the ID codes used in the URL through model variables."/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="684.9387845771375"/>
+        <Option name="component_pos_y" type="double" value="69.62469189953246"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="choose_aws"/>
+      <Option name="component_height" type="double" value="30"/>
+      <Option name="component_pos_x" type="double" value="535.9792529181404"/>
+      <Option name="component_pos_y" type="double" value="129.6314708171235"/>
+      <Option name="component_width" type="double" value="200"/>
+      <Option name="name" type="QString" value="choose_aws"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="year" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value="The year of data to download"/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="452.6826218604815"/>
+        <Option name="component_pos_y" type="double" value="48.94617898835841"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="year"/>
+      <Option name="component_height" type="double" value="30"/>
+      <Option name="component_pos_x" type="double" value="163.9500827731225"/>
+      <Option name="component_pos_y" type="double" value="262.7797863459529"/>
+      <Option name="component_width" type="double" value="200"/>
+      <Option name="name" type="QString" value="year"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+  </Option>
+</Option>

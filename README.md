@@ -8,4 +8,4 @@ The current version (V0) only supports a limited number of AWS stations, but ser
 License:
 SASSCAL Weathernet Year Meteo data collection © 2025 by Evanilton E. S. Pires is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-
+[![DOI](https://zenodo.org/badge/1036546204.svg)](https://doi.org/10.5281/zenodo.17203298)
